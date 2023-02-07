@@ -21,10 +21,10 @@ export const DashboardMenu = () => {
     return (
         <StyledDashboardMenu>
             <figure>
-                <img src="./logo.svg" alt="DraftFootz logo" />
+                <img src="./ball.png" alt="logo" />
+                <h1 style={{ textAlign: "center" }}>NDM</h1>
                 <div>
                     <img src="./ball.png" alt="ball" />
-                    <img src="./Draft Footz.png" alt="Draft Footz" />
                 </div>
             </figure>
             <div>
@@ -36,12 +36,12 @@ export const DashboardMenu = () => {
                             onClick={() => setDashboardPage(14)}
                         >
                             {" "}
-                            Meu time{" "}
+                            Seção de times{" "}
                         </button>
                     </nav>
                     <button onClick={() => logoutDashboard()}>
                         <FaSignOutAlt />
-                        Logout
+                        HOME
                     </button>
                 </div>
             </div>

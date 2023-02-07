@@ -4,7 +4,6 @@ import {
     ButtonSend,
 } from "../../styles/Buttons/style";
 import { MyTeamPlayersStyled, PlayerListStyled } from "./style";
-import trashIcon from "../../img/trash.svg";
 import { useContext, useEffect } from "react";
 import { TeamContext } from "../../context/TeamContext";
 import { TournamentContext } from "../../context/TournamentContext";

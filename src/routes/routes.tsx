@@ -3,7 +3,6 @@ import { DashboardPage } from "../pages/Dashboard";
 import Homepage from "../pages/Homepage";
 import { TournamentProvider } from "../context/TournamentContext";
 import { TeamProvider } from "../context/TeamContext";
-import { MatchesProvider } from "../context/MatchesContext";
 
 export const AppRoutes = () => {
     return (
@@ -14,13 +13,11 @@ export const AppRoutes = () => {
             <Route
                 path="/dashboard"
                 element={
-                    <MatchesProvider>
-                        <TournamentProvider>
-                            <TeamProvider>
-                                <DashboardPage />
-                            </TeamProvider>
-                        </TournamentProvider>
-                    </MatchesProvider>
+                    <TournamentProvider>
+                        <TeamProvider>
+                            <DashboardPage />
+                        </TeamProvider>
+                    </TournamentProvider>
                 }
             />
         </Routes>

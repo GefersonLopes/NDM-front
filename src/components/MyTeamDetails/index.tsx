@@ -17,7 +17,7 @@ export const MyTeamDetails = () => {
         useContext(TeamContext);
     const { allSubscriptions } = useContext(SubscriptionsContext);
 
-    const teamId = user.teamId;
+    const { teamId } = useContext(TeamContext);
 
     useEffect(() => {
         async function getMyTeam() {

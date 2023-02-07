@@ -4,18 +4,15 @@ import { useContext } from "react";
 import { TournamentContext } from "../../context/TournamentContext";
 import { useEffect } from "react";
 import { api } from "../../services/api";
-import { UserContext } from "../../context/UsersContext";
 import { TeamContext } from "../../context/TeamContext";
 import { ButtonRight } from "../../styles/Buttons/style";
 import standard_team_shield from "../../img/standard_team_shield.png";
-import { SubscriptionsContext } from "../../context/SubscriptionsContext";
 
 export const MyTeamDetails = () => {
     const { setDashboardPage } = useContext(TournamentContext);
-    const { user } = useContext(UserContext);
     const { teamData, setTeamData, getPlayersFromATeam, playersData } =
         useContext(TeamContext);
-    const { allSubscriptions } = useContext(SubscriptionsContext);
+
 
     const { teamId } = useContext(TeamContext);
 

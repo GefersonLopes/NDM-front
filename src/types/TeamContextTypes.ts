@@ -16,7 +16,6 @@ export interface iTeamContext {
   teamId: number | undefined;
   teamData: iTeamData;
   setTeamData: React.Dispatch<React.SetStateAction<iTeamData>>;
-  userId: number;
   playersData: iPlayerData[];
 }
 

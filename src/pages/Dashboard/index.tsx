@@ -9,7 +9,6 @@ import { MyTeamPosition } from "../../components/MyTeamPosition";
 
 import { TeamTournament } from "../../components/TeamTournament";
 
-import { TournamentsView } from "../../components/TournamentsView";
 import { Welcome } from "../../components/Welcome";
 
 import { SubscriptionsProvider } from "../../context/SubscriptionsContext";
@@ -27,7 +26,7 @@ export const DashboardPage = () => {
                 <div>
                     <SubscriptionsProvider>
                         {dashboardPage === 0 && <Welcome />}
-                        {dashboardPage === 3 && <TournamentsView />}
+
                         {dashboardPage === 7 && <TeamTournament />}
                         {dashboardPage === 14 && <MyTeamBlank />}
                         {dashboardPage === 15 && <MyTeamDetails />}

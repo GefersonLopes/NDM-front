@@ -14,9 +14,8 @@ export interface iTournamentContext {
 
     
     allTournaments: iDataTournament[];
-    tournamentData: iDataTournament | null;
+  
 
-    disableButton: boolean;
     readingTournament: tReadingTournament;
     dashboardPage: number;
 

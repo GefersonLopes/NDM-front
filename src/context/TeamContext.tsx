@@ -16,7 +16,6 @@ import { UserContext } from "./UsersContext";
 export const TeamContext = createContext({} as iTeamContext);
 
 export const TeamProvider = ({ children }: iTeamProvider) => {
-    const { user, token, updateUserTeam } = useContext(UserContext);
     const { setDashboardPage } = useContext(TournamentContext);
     const [disableButton, setDisableButton] = useState(false);
     const [teamData, setTeamData] = useState({} as iTeamData);
@@ -24,7 +23,6 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
     const { setLoading } = useContext(UserContext);
     const url = "https://ndm-ihxf.onrender.com/";
 
-    const userId = user.id;
     const [teamId, setTeamId] = useState<number>();
 
     useEffect(() => {
@@ -84,7 +82,6 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
         try {
             setLoading(true);
             await axios.delete(`${url}teams/${teamId}`);
-            updateUserTeam(null);
         } catch (err) {
             toast.error("Ops...algo deu errado!");
         } finally {
@@ -174,7 +171,6 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
                 teamId,
                 teamData,
                 setTeamData,
-                userId,
                 playersData,
             }}
         >

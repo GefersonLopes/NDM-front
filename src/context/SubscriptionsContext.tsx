@@ -4,14 +4,12 @@ import { api } from "../services/api";
 import { iSubscriptionData, iSubscriptionsContext, iSubscriptionsProvider } from "../types/SubscriptionsContextTypes";
 import { iTeamData } from "../types/TeamContextTypes";
 import { TournamentContext } from "./TournamentContext";
-import { UserContext } from "./UsersContext";
 
 export const SubscriptionsContext = createContext({} as iSubscriptionsContext);
 
 export const SubscriptionsProvider = ({children}: iSubscriptionsProvider) => {
 
     const { readingTournament } = useContext(TournamentContext);
-    const { token } = useContext(UserContext);
     const [ updater, setUpdater ] = useState(0);
 
     const refreshSubscriptions = () => setUpdater(updater+1);
@@ -39,7 +37,7 @@ export const SubscriptionsProvider = ({children}: iSubscriptionsProvider) => {
             accepted: false
         }
         try {
-            api.defaults.headers.common.authorization = `Bearer ${token}`;
+           
             api.post('subscriptions', data)
             .then((res) => {
                 toast.success('Pedido de inscrição feito com sucesso!');   
@@ -81,7 +79,7 @@ export const SubscriptionsProvider = ({children}: iSubscriptionsProvider) => {
 
     async function deleteSubscription(subscriptionId: number) {
         await api.delete(`subscriptions/${subscriptionId}`, {
-            headers: { authorization:  `Bearer ${token}`}
+           
         });
     };
 
@@ -90,7 +88,7 @@ export const SubscriptionsProvider = ({children}: iSubscriptionsProvider) => {
 
         try {   
             await api.get<iSubscriptionData[]>(`subscriptions?&tournamentId=${tournamentId}`, {
-                headers: { authorization: `Bearer ${token}`}
+             
             })
             .then((response) => { tournamentSubscriptions = response.data})
 
@@ -108,7 +106,7 @@ export const SubscriptionsProvider = ({children}: iSubscriptionsProvider) => {
         try {
             api.patch(`subscriptions/${subscriptionId}`, data , {
                 headers: {
-                    authorization: `Bearer ${token}`
+                
                 }
             })
         } finally {

@@ -21,7 +21,7 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
     const [teamData, setTeamData] = useState({} as iTeamData);
     const [playersData, setPlayersData] = useState<iPlayerData[]>([]);
     const { setLoading } = useContext(UserContext);
-    const url = "https://ndm-ihxf.onrender.com/";
+    const url = "https://ndm-wy3s.onrender.com/";
 
     const [teamId, setTeamId] = useState<number>();
 

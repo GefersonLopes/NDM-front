@@ -13,7 +13,7 @@ export const UsersProvider = ({ children }: iUsersProvider) => {
         navigate("/");
     };
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     return (
         <UserContext.Provider

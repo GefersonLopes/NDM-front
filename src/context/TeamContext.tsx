@@ -33,6 +33,7 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
 
     function createNewTeam(data: iDataNewTeam) {
         setDisableButton(true);
+        setLoading(false);
 
         axios
             .post(url + "teams", data)
@@ -45,8 +46,8 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
             })
             .catch((err) => {
                 console.log(err);
-
-                toast.error("Ops...seu time não foi criado!");
+                setLoading(true);
+                toast.error("Ops...Esse time já exite!");
             });
 
         setDisableButton(true);
@@ -60,19 +61,21 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
     }
 
     async function updateTeam(data: iDataNewTeam) {
-        try {
-            setLoading(true);
+        setLoading(false);
 
+        try {
             const requisition = await axios.patch(
                 url + `teams/${teamId}`,
                 data
             );
+            setLoading(true);
             if (requisition.status === 200) {
                 toast.success("Alterações no time feitas com sucesso!");
                 setDashboardPage(15);
             }
         } catch (err) {
             toast.error("Ops...algo deu errado!");
+            setLoading(true);
         } finally {
             setLoading(false);
         }
@@ -98,6 +101,7 @@ export const TeamProvider = ({ children }: iTeamProvider) => {
     }
 
     async function createNewPlayer(data: iDataNewPlayer) {
+        setLoading(false);
         await getPlayersFromATeam();
         let checkPosition = playersData.filter((e) => {
             return e.position === data.position;

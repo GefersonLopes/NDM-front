@@ -7,9 +7,12 @@ import { iDataNewTeam } from "../../types/TeamContextTypes";
 import { CreateTeamStyled } from "./style";
 import { StyledFormInput } from "../../styles/Inputs/style";
 import { ButtonSend } from "../../styles/Buttons/style";
+import { UserContext } from "../../context/UsersContext";
+import { Loading } from "../Loading/style";
 
 export const CreateTeam = () => {
     const { createNewTeam } = useContext(TeamContext);
+    const { loading } = useContext(UserContext);
 
     const {
         register,
@@ -41,7 +44,9 @@ export const CreateTeam = () => {
                     />
                     {errors.logo?.message && <span>{errors.logo.message}</span>}
                 </div>
-                <ButtonSend type="submit">Criar time</ButtonSend>
+                <ButtonSend type="submit">
+                    {!loading ? <Loading src="/spinner.png" /> : "Criar time"}
+                </ButtonSend>
             </form>
         </CreateTeamStyled>
     );

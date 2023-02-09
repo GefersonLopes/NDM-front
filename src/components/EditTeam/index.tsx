@@ -8,10 +8,13 @@ import { StyledFormInput } from "../../styles/Inputs/style";
 import { ButtonSend } from "../../styles/Buttons/style";
 import { editTeamFormSchema } from "./schema";
 import { TournamentContext } from "../../context/TournamentContext";
+import { UserContext } from "../../context/UsersContext";
+import { Loading } from "../Loading/style";
 
 export const EditTeam = () => {
     const { updateTeam } = useContext(TeamContext);
     const { setDashboardPage } = useContext(TournamentContext);
+    const { loading } = useContext(UserContext);
 
     const {
         register,
@@ -62,7 +65,11 @@ export const EditTeam = () => {
                     <ButtonSend onClick={() => setDashboardPage(15)}>
                         Voltar
                     </ButtonSend>
-                    <ButtonSend type="submit">Salvar alterações</ButtonSend>
+                    <ButtonSend type="submit">{!loading ? (
+                            <Loading src="/spinner.png" />
+                        ) : (
+                            "Salvar alterações"
+                        )}</ButtonSend>
                 </div>
             </form>
         </EditTeamStyled>

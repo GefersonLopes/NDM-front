@@ -13,9 +13,6 @@ const Header = () => {
     return (
         <HeaderNav>
             <div className="div-header">
-                <div className="div-logo">
-                    <img className="logo" src="./xv.png" alt="Logo" />
-                </div>
                 <div className="div-title">
                     <h1 className="title">NDM</h1>
                 </div>
@@ -28,7 +25,7 @@ const Header = () => {
             </div>
             <div className={open ? "none" : "buttons-header"}>
                 <button className="inicio">Início</button>
-                <a target="_black" href="https://github.com/GefersonLopes">
+                <a target="_black" href="https://portifolio-cuw8.vercel.app/">
                     <button className="quem-somos">Mais sobre Geferson</button>
                 </a>
             </div>
@@ -37,7 +34,7 @@ const Header = () => {
                     <button onClick={() => setOpen(false)}>X</button>
                 </div>
                 <button>Início</button>
-                <a target="_black" href="https://github.com/GefersonLopes">
+                <a target="_black" href="https://portifolio-cuw8.vercel.app/">
                     <button className="quem-somos">Mais sobre Geferson</button>
                 </a>
             </div>

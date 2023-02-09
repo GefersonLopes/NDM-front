@@ -26,8 +26,8 @@ export const MyTeamDetails = () => {
             }
         }
 
-        getPlayersFromATeam();
         getMyTeam();
+        getPlayersFromATeam();
     }, []);
 
     return (
@@ -37,13 +37,8 @@ export const MyTeamDetails = () => {
             </ButtonRight>
             <TeamHeaderStyled>
                 <figure>
-                    {teamData.logo !== "" ? (
+                    {teamData.logo !== "" && (
                         <img src={teamData.logo} alt={teamData.name} />
-                    ) : (
-                        <img
-                            src={standard_team_shield}
-                            alt={teamData.name}
-                        ></img>
                     )}
                 </figure>
                 <h2>{teamData.name}</h2>

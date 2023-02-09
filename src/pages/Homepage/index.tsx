@@ -7,7 +7,7 @@ const Homepage = () => {
         <FigureBackground>
             <Header />
             <DivHomeCenter>
-                <h2>Crie seu campeonato agora</h2>
+                <h2>Seja bem vindo(a) ao meu teste ;)</h2>
                 <LinkToRegister to="/dashboard">VER O PROJETO</LinkToRegister>
             </DivHomeCenter>
             <FooterHome />

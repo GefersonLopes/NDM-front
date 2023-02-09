@@ -42,8 +42,8 @@ export const HeaderNav = styled.header`
   }
 
   .logo {
-    width: 120px;
-    height: 96px;
+    width: 50px;
+    height: 30px;
     margin-top: 4px;
     margin-left: -16px;
   }
@@ -54,7 +54,7 @@ export const HeaderNav = styled.header`
     font-weight: 700;
     font-size: 20px;
     color: #ffffff;
-    margin-left: -24px;
+    margin-right: -10px;
   }
 
   .div-dropdown {

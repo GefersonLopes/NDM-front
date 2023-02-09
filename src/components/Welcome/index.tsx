@@ -5,7 +5,7 @@ export const Welcome = () => {
         <SectionWelcome>
             <div>
                 <figure>
-                    <img src="/logo-welcome.png" alt="" />
+                    <img style={{width: '100%'}} src="/logo-welcome.png" alt="" />
                 </figure>
             </div>
         </SectionWelcome>
